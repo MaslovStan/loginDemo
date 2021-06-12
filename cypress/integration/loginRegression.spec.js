@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import LoginPage from '../support/pageObjects/loginPage';
 import ProfilePage from '../support/pageObjects/profilePage';
 
@@ -47,10 +48,14 @@ describe('VERIFY ALL ELEMENTS PRESENT AND HAVE CORRECT TEXT ON PROFILE PAGE',()=
         ProfilePage.successMessage.should('contain','You logged into a secure area!')
     })
     it('should verify correct title on profile page',()=>{
-        ProfilePage.title.should('contains','Secure Area')
+        ProfilePage.title.then(($el)=>{
+            expect($el.text()).to.include('Secure Area')
+        })
     })
     it('should verify correct subheader text on profile page',()=>{
-        ProfilePage.subHeaderMessage.should('contains','Welcome to the Secure Area. When you are done click logout below.')
+        ProfilePage.subHeaderMessage.then(($el)=>{
+            expect($el.text()).to.include('Welcome to the Secure Area. When you are done click logout below.')
+        })
     })
     it('logout button has correct text',()=>{
         ProfilePage.logoutBnt.should('contain','Logout')
