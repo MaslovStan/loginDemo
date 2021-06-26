@@ -6,7 +6,11 @@
   "scripts": {
     "cy:allSpecs": "cypress run --spec \"cypress/integration/**\" --reporter mocha-allure-reporter",
     "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
-    "test:allure": "npm run cy:allSpecs && npm run report:allure"
+    "test:allure": "npm run cy:allSpecs && npm run report:allure",
+    "cy:run": "cypress run",
+    "cy:verify": "cypress verify"
+
+
   },
   "author": "",
   "license": "ISC",
