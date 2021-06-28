@@ -8,9 +8,9 @@
     "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
     "test:allure": "npm run cy:allSpecs && npm run report:allure",
     "cy:run": "cypress run",
-    "cy:verify": "cypress verify"
-
-
+    "cy:verify": "cypress verify",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox"
   },
   "author": "",
   "license": "ISC",
